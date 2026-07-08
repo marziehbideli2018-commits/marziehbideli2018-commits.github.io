@@ -18,6 +18,7 @@ color:#fff;
 overflow-x:hidden;
 }
 
+/* background glow */
 body::before{
 content:'';
 position:fixed;
@@ -35,6 +36,7 @@ bottom:-200px;right:-200px;
 filter:blur(120px);
 }
 
+/* NAV */
 nav{
 display:flex;
 justify-content:space-between;
@@ -43,6 +45,7 @@ position:fixed;
 width:100%;
 background:rgba(2,6,23,0.5);
 backdrop-filter:blur(12px);
+z-index:1000;
 }
 
 nav a{
@@ -52,6 +55,7 @@ text-decoration:none;
 }
 nav a.active{color:#a855f7;}
 
+/* HERO */
 .hero{
 display:flex;
 justify-content:space-between;
@@ -75,6 +79,7 @@ filter: blur(1px) brightness(0.95);
 mask-image: linear-gradient(to bottom, black 85%, transparent);
 }
 
+/* GLASS + animation (kept) */
 .card, .project{
 background: rgba(255,255,255,0.04);
 border-radius:20px;
@@ -117,6 +122,7 @@ align-items:center;
 gap:10px;
 }
 
+/* PROJECTS */
 .projects{padding:40px 80px;}
 
 .grid{
@@ -150,17 +156,21 @@ gap:20px;
 </div>
 
 <div class="right">
-<div class="card">
+<div id="about" class="card">
 <h2>About me</h2>
 
 <p>
 I am currently working in the field of information technology, gaining practical experience alongside my academic studies.
 </p>
 
+<p>
+I focus on improving my skills in web development and building modern, efficient applications.
+</p>
+
 <div class="info-grid">
 
 <div class="info">🎂 Birth: 2003</div>
-<div class="info">📍 Location: Ahwaz,Iran</div>
+<div class="info">📍 Location: Ahwaz, Iran</div>
 
 <div class="info">📧 marziehbideli2018@gmail.com</div>
 <div class="info">🎓 Computer Engineering</div>
