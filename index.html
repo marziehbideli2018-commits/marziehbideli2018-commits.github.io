@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marzieh Abbasi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -20,42 +20,50 @@ font-family:'Inter',sans-serif;
 body{
 background:#020617;
 color:#fff;
+overflow-x:hidden;
 }
 
-/* ===== BACKGROUND ===== */
+/* ===== BACKGROUND EXACT STYLE ===== */
 body::before{
 content:'';
 position:fixed;
-width:600px;height:600px;
-background:radial-gradient(circle,#8b5cf644,transparent);
-top:-150px;left:-150px;
-filter:blur(80px);
+width:700px;height:700px;
+background:radial-gradient(circle,#8b5cf633,transparent);
+top:-200px;left:-200px;
+filter:blur(100px);
 }
 body::after{
 content:'';
 position:fixed;
-width:500px;height:500px;
-background:radial-gradient(circle,#22c55e33,transparent);
-bottom:-150px;right:-150px;
-filter:blur(80px);
+width:600px;height:600px;
+background:radial-gradient(circle,#ec489933,transparent);
+bottom:-200px;right:-200px;
+filter:blur(100px);
 }
 
 /* ===== NAV ===== */
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:25px 80px;
 position:fixed;
 width:100%;
-background:rgba(2,6,23,0.5);
-backdrop-filter:blur(10px);
+background:rgba(2,6,23,0.4);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
+nav .logo{
+font-weight:700;
+font-size:20px;
+}
+
 nav a{
-color:#aaa;
+color:#bbb;
 margin-left:25px;
 text-decoration:none;
+font-size:14px;
 }
 
 nav a:hover{
@@ -66,21 +74,23 @@ color:#a855f7;
 .hero{
 display:flex;
 justify-content:space-between;
-padding:140px 80px 40px;
+align-items:center;
+padding:140px 80px 60px;
 }
 
-/* LEFT */
+/* LEFT SIDE */
 .left{
 width:50%;
 }
 
 .profile{
-width:180px;
-height:180px;
+width:190px;
+height:190px;
 border-radius:50%;
 overflow:hidden;
-box-shadow:0 0 35px #a855f7;
 margin-bottom:20px;
+border:3px solid rgba(168,85,247,0.5);
+box-shadow:0 0 40px #a855f7;
 }
 
 .profile img{
@@ -88,48 +98,56 @@ width:100%;
 height:100%;
 object-fit:cover;
 
-/* بلور خیلی کم */
-filter: blur(0.8px) brightness(0.95);
+/* بلور فقط خیلی جزئی */
+filter: blur(0.5px) brightness(0.95);
 
-/* فقط پایین محو */
-mask-image: linear-gradient(to bottom, black 80%, transparent);
+/* پایین خیلی کم محو */
+mask-image: linear-gradient(to bottom, black 85%, transparent);
+}
+
+.hello{
+color:#a855f7;
+margin-bottom:5px;
 }
 
 .left h1{
-font-size:3.2rem;
+font-size:3.4rem;
 font-weight:800;
 }
 
-.left span{
+.left h1 span{
 color:#a855f7;
 }
 
 .subtitle{
 color:#aaa;
-margin-top:8px;
+margin-top:6px;
 }
 
 .desc{
 margin-top:15px;
-opacity:0.8;
 max-width:450px;
+opacity:0.8;
+line-height:1.6;
 }
 
+/* BUTTONS */
 .buttons{
 margin-top:20px;
 }
 
 .btn{
-padding:12px 18px;
+padding:12px 20px;
 border-radius:10px;
-text-decoration:none;
 margin-right:10px;
-display:inline-block;
+text-decoration:none;
+font-size:14px;
 }
 
 .primary{
 background:linear-gradient(45deg,#7c3aed,#a855f7);
 color:#fff;
+box-shadow:0 0 15px #a855f7;
 }
 
 .secondary{
@@ -145,7 +163,7 @@ margin-top:20px;
 .social i{
 margin-right:15px;
 color:#aaa;
-cursor:pointer;
+font-size:18px;
 }
 
 .social i:hover{
@@ -154,23 +172,23 @@ color:#a855f7;
 
 /* RIGHT CARD */
 .right{
-width:45%;
+width:42%;
 }
 
 .card{
 background:rgba(255,255,255,0.04);
 padding:30px;
 border-radius:20px;
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
 border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 40px rgba(168,85,247,0.15);
+box-shadow:0 0 60px rgba(168,85,247,0.15);
 }
 
 .card h2{
-margin-bottom:15px;
 display:flex;
 align-items:center;
 gap:10px;
+margin-bottom:15px;
 }
 
 .card h2 i{
@@ -180,49 +198,48 @@ color:#a855f7;
 .card p{
 opacity:0.8;
 margin-bottom:20px;
+line-height:1.5;
 }
 
 /* INFO GRID */
 .info-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:18px;
 }
 
-.info-item{
+.info{
 display:flex;
-align-items:center;
 gap:10px;
-font-size:0.9rem;
+align-items:center;
+font-size:14px;
 }
 
-.info-item i{
+.info i{
 color:#a855f7;
 }
 
-/* STATS */
+/* STATS BAR */
 .stats{
 margin:40px 80px;
 display:flex;
-justify-content:space-around;
+justify-content:space-between;
 background:rgba(255,255,255,0.04);
 padding:25px;
 border-radius:20px;
-backdrop-filter:blur(15px);
+backdrop-filter:blur(20px);
 border:1px solid rgba(255,255,255,0.08);
 }
 
 .stat{
 text-align:center;
+flex:1;
 }
 
 .stat i{
 color:#a855f7;
+font-size:20px;
 margin-bottom:8px;
-}
-
-.stat h3{
-margin-top:5px;
 }
 
 /* PROJECTS */
@@ -230,9 +247,13 @@ margin-top:5px;
 padding:40px 80px;
 }
 
+.projects h2{
+margin-bottom:20px;
+}
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
@@ -245,8 +266,8 @@ transition:0.3s;
 }
 
 .project:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px rgba(168,85,247,0.2);
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(168,85,247,0.2);
 }
 
 .project i{
@@ -255,11 +276,15 @@ color:#a855f7;
 margin-bottom:10px;
 }
 
+.tags{
+margin-top:10px;
+}
+
 .tags span{
 background:#7c3aed;
 padding:5px 10px;
 border-radius:8px;
-font-size:0.75rem;
+font-size:11px;
 margin-right:5px;
 }
 
@@ -276,7 +301,7 @@ opacity:0.5;
 <body>
 
 <nav>
-<div><b>MA.</b></div>
+<div class="logo">MA.</div>
 <div>
 <a href="#">Home</a>
 <a href="#">About</a>
@@ -294,7 +319,8 @@ opacity:0.5;
 <img src="profile.jpg">
 </div>
 
-<p>Hello, I'm</p>
+<p class="hello">Hello, I'm</p>
+
 <h1>Marzieh <span>Abbasi</span></h1>
 
 <p class="subtitle">Computer Engineering Student</p>
@@ -324,19 +350,20 @@ I love turning ideas into real projects.
 <h2><i class="fa-regular fa-user"></i> About me</h2>
 
 <p>
-I am a computer engineering student with a strong interest in web development and creating efficient solutions.
+I am a computer engineering student with a strong interest in web development,
+algorithms and creating efficient solutions.
 </p>
 
 <div class="info-grid">
 
-<div class="info-item"><i class="fa-regular fa-calendar"></i> 2003</div>
-<div class="info-item"><i class="fa-regular fa-envelope"></i> email@example.com</div>
+<div class="info"><i class="fa-regular fa-calendar"></i> 2003</div>
+<div class="info"><i class="fa-regular fa-envelope"></i> marzieh@email.com</div>
 
-<div class="info-item"><i class="fa-solid fa-location-dot"></i> Tehran, Iran</div>
-<div class="info-item"><i class="fa-solid fa-phone"></i> +98 912 000 0000</div>
+<div class="info"><i class="fa-solid fa-location-dot"></i> Tehran, Iran</div>
+<div class="info"><i class="fa-solid fa-phone"></i> +98 912 000 0000</div>
 
-<div class="info-item"><i class="fa-solid fa-graduation-cap"></i> Computer Engineering</div>
-<div class="info-item"><i class="fa-solid fa-globe"></i> English (B2)</div>
+<div class="info"><i class="fa-solid fa-graduation-cap"></i> Computer Engineering</div>
+<div class="info"><i class="fa-solid fa-globe"></i> English (B2)</div>
 
 </div>
 
@@ -356,7 +383,7 @@ I am a computer engineering student with a strong interest in web development an
 <div class="stat">
 <i class="fa-solid fa-laptop-code"></i>
 <h3>2+</h3>
-<p>Years</p>
+<p>Years of Coding</p>
 </div>
 
 <div class="stat">
@@ -382,7 +409,7 @@ I am a computer engineering student with a strong interest in web development an
 <div class="project">
 <i class="fa-solid fa-calculator"></i>
 <h3>Python Calculator</h3>
-<p>Simple calculator built with Python</p>
+<p>A simple calculator built with Python</p>
 <div class="tags">
 <span>Python</span>
 <span>CLI</span>
@@ -392,18 +419,21 @@ I am a computer engineering student with a strong interest in web development an
 <div class="project">
 <i class="fa-solid fa-globe"></i>
 <h3>Portfolio Website</h3>
-<p>Built with HTML, CSS</p>
+<p>Built with HTML, CSS & JS</p>
 <div class="tags">
 <span>HTML</span>
 <span>CSS</span>
+<span>JS</span>
 </div>
 </div>
 
 <div class="project">
 <i class="fa-solid fa-list-check"></i>
 <h3>Todo App</h3>
-<p>Task management project</p>
+<p>Task management web app</p>
 <div class="tags">
+<span>HTML</span>
+<span>CSS</span>
 <span>JS</span>
 </div>
 </div>
