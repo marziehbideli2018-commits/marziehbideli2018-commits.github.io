@@ -29,9 +29,7 @@ body::after {
                       radial-gradient(white 1px, transparent 2px);
     background-size: 160px 160px, 100px 100px;
     opacity:0.18; z-index:-1;
-    animation: twinkle 18s infinite alternate;
 }
-@keyframes twinkle { from {opacity:0.16;} to {opacity:0.24;} }
 
 /* NAV */
 nav {
@@ -56,27 +54,32 @@ nav a.active::after {
     width:230px; height:230px; border-radius:50%; overflow:hidden; margin-bottom:32px;
     box-shadow:0 0 40px #a855f7, 0 0 90px #a855f7, 0 0 160px rgba(168,85,247,0.6);
     border:5px solid rgba(168,85,247,0.6);
+    display: block;
 }
 
 .left h1 { font-size:3.9rem; font-weight:800; line-height:1.05; }
 .left span { color:#a855f7; }
 .subtitle { font-size:1.4rem; color:#aaa; margin:10px 0 20px; }
 
-.buttons { margin:30px 0; display:flex; gap:16px; }
-.btn { padding:14px 30px; border-radius:12px; font-weight:600; text-decoration:none; transition:all 0.3s; }
+.buttons { margin:32px 0 40px; display:flex; gap:16px; }
+.btn {
+    padding:14px 28px; border-radius:12px; font-weight:600; text-decoration:none;
+    display:flex; align-items:center; gap:10px; transition:all 0.3s;
+}
 .primary { background:linear-gradient(45deg,#7c3aed,#a855f7); color:white; box-shadow:0 0 25px rgba(168,85,247,0.7); }
 .secondary { border:2px solid #666; color:#ddd; }
 
+/* SOCIAL */
 .social { margin-top:30px; display:flex; gap:24px; }
 .social i { font-size:24px; color:#bbb; transition:0.3s; }
 .social i:hover { color:#a855f7; transform:scale(1.25); }
 
-/* ABOUT CARD - ارتفاع بیشتر */
+/* ABOUT CARD */
 .card {
     background:rgba(255,255,255,0.06); padding:40px; border-radius:26px;
     backdrop-filter:blur(30px); border:1px solid rgba(168,85,247,0.4);
     position:relative; overflow:hidden; box-shadow:0 0 70px rgba(168,85,247,0.35);
-    min-height: 520px; /* ارتفاع بیشتر برای متن آینده */
+    min-height: 560px; /* ارتفاع بیشتر */
 }
 .card::before {
     content:''; position:absolute; top:-120px; right:-80px; width:280px; height:280px;
@@ -92,9 +95,8 @@ nav a.active::after {
 .card h2 { display:flex; align-items:center; gap:12px; margin-bottom:26px; font-size:1.5rem; }
 .card h2 i { color:#a855f7; font-size:26px; }
 
-/* Info Items */
 .info-grid {
-    display:grid; grid-template-columns:1fr 1fr; gap:22px;
+    display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top: 30px; /* فاصله بیشتر از متن */
 }
 .info {
     background:rgba(255,255,255,0.05); padding:16px 18px; border-radius:12px;
@@ -113,11 +115,10 @@ nav a.active::after {
     backdrop-filter:blur(25px); border:1px solid rgba(168,85,247,0.3); position:relative;
 }
 .stat {
-    display:flex; align-items:center; gap:18px; flex:1; position:relative; text-align:left;
+    display:flex; align-items:center; gap:18px; flex:1; position:relative;
 }
 .stat i {
     font-size:34px; color:#fff; filter:drop-shadow(0 0 12px #a855f7);
-    text-shadow:0 0 15px #a855f7;
 }
 .stats::before, .stats::after {
     content:''; position:absolute; top:22%; bottom:22%; width:1px; background:rgba(168,85,247,0.4);
@@ -128,36 +129,24 @@ nav a.active::after {
     position:absolute; top:22%; bottom:22%; width:1px; background:rgba(168,85,247,0.4); left:74.5%;
 }
 
-/* PROJECTS - دقیق مثل تصویر */
-.projects {
-    padding:60px 80px 120px;
-}
-.projects-header {
-    display:flex; align-items:center; gap:12px; margin-bottom:40px; font-size:1.8rem;
-}
+/* PROJECTS */
+.projects { padding:60px 80px 120px; }
+.projects-header { display:flex; align-items:center; gap:12px; margin-bottom:40px; font-size:1.8rem; }
 .projects-header i { color:#a855f7; font-size:28px; filter:drop-shadow(0 0 10px #a855f7); }
 
-.grid {
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:28px;
-}
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:28px; }
 .project {
     background:rgba(255,255,255,0.05); padding:28px; border-radius:20px;
     border:1px solid rgba(168,85,247,0.25); transition:0.4s;
 }
 .project:hover { transform:translateY(-10px); box-shadow:0 0 45px rgba(168,85,247,0.4); }
 
-.project-header {
-    display:flex; align-items:center; gap:14px; margin-bottom:12px;
-}
-.project-header i {
-    font-size:36px; color:#a855f7; filter: drop-shadow(0 0 12px #a855f7);
-}
+.project-header { display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+.project-header i { font-size:36px; color:#a855f7; filter: drop-shadow(0 0 12px #a855f7); }
 
-.tags {
-    display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;
-}
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
 .tags span {
-    background:#6d28d9; /* بنفش دقیق تصویر */
+    background:#6d28d9;
     color:white;
     padding:6px 14px;
     border-radius:8px;
@@ -185,7 +174,7 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
 <section id="home" class="hero">
     <div class="left">
         <div class="profile">
-            <img src="profile.jpg" alt="Marzieh Abbasi">
+            <img src="profile.jpg" alt="Marzieh Abbasi" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <p class="hello">Hello, I'm</p>
         <h1>Marzieh <span>Abbasi</span></h1>
@@ -193,8 +182,8 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
         <p class="desc">I'm passionate about software development and problem solving. I love turning ideas into real projects.</p>
         
         <div class="buttons">
-            <a href="#" class="btn primary">Download CV</a>
-            <a href="#" class="btn secondary">Contact Me</a>
+            <a href="#" class="btn primary"><i class="fas fa-download"></i> Download CV</a>
+            <a href="#" class="btn secondary"><i class="fas fa-envelope"></i> Contact Me</a>
         </div>
         
         <div class="social">
@@ -265,7 +254,7 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
     </div>
     <div class="stat">
         <i class="fa-solid fa-laptop-code"></i>
-        <div><h3>2+</h3><p>Years</p></div>
+        <div><h3>2+</h3><p>Years of coding</p></div>
     </div>
     <div class="stat">
         <i class="fa-solid fa-trophy"></i>
@@ -273,7 +262,7 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
     </div>
     <div class="stat">
         <i class="fa-solid fa-mug-hot"></i>
-        <div><h3>100+</h3><p>Hours</p></div>
+        <div><h3>100+</h3><p>Hours of learning</p></div>
     </div>
     <div class="last-divider"></div>
 </div>
