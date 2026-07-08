@@ -177,13 +177,21 @@ nav a.active::after {
 .project:hover { transform:translateY(-10px); box-shadow:0 0 45px rgba(168,85,247,0.4); }
 
 .project-header { 
-    display:flex; align-items:center; gap:14px; margin-bottom:16px; 
+    display:flex; 
+    align-items: center; 
+    gap: 18px; 
+    margin-bottom: 16px;
+    min-height: 50px; /* برای وسط کردن بهتر */
 }
 .project-header i { 
-    font-size:42px; 
+    font-size: 46px; 
     color:#a855f7; 
     filter: drop-shadow(0 0 12px #a855f7);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px; /* عرض ثابت برای تراز دقیق */
 }
 
 .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
