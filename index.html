@@ -3,19 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marzieh Abbasi | Portfolio</title>
+<title>Marzieh Abbasi | Futuristic Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-background: radial-gradient(circle at top left,#0f172a,#020617);
+background:#020617;
 color:#e5e7eb;
+overflow-x:hidden;
 }
 
-/* NAV */
+body::before{
+content:'';
+position:fixed;
+width:600px;height:600px;
+background:radial-gradient(circle,#00f0ff33,transparent);
+top:-200px;left:-200px;
+}
+body::after{
+content:'';
+position:fixed;
+width:500px;height:500px;
+background:radial-gradient(circle,#ff00aa33,transparent);
+bottom:-200px;right:-200px;
+}
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -33,9 +48,6 @@ margin-left:20px;
 text-decoration:none;
 }
 
-nav a:hover{color:#8b5cf6}
-
-/* HERO */
 .hero{
 display:flex;
 justify-content:space-between;
@@ -49,71 +61,54 @@ font-size:3.5rem;
 font-weight:800;
 }
 
-.left span{color:#8b5cf6}
+.left span{
+color:#00f0ff;
+text-shadow:0 0 15px #00f0ff;
+}
 
 .left p{
 margin-top:15px;
 opacity:0.8;
-max-width:450px;
-}
-
-.buttons{
-margin-top:25px;
 }
 
 .btn{
+margin-top:20px;
 padding:12px 20px;
 border-radius:10px;
-margin-right:10px;
+border:1px solid #00f0ff;
+color:#00f0ff;
 text-decoration:none;
+display:inline-block;
 }
 
-.primary{
-background:#8b5cf6;
-color:#fff;
-}
-
-.secondary{
-border:1px solid #8b5cf6;
-color:#8b5cf6;
-}
-
-/* PROFILE */
 .profile{
 width:260px;
 height:260px;
 border-radius:50%;
 overflow:hidden;
-box-shadow:0 0 40px #8b5cf688;
+border:2px solid #00f0ff;
+box-shadow:0 0 30px #00f0ff;
 }
 
 .profile img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:blur(2px) brightness(0.9);
+filter:blur(3px) brightness(0.85);
 }
 
-/* CARD */
-.card{
-background:rgba(255,255,255,0.05);
-border-radius:20px;
-padding:30px;
-margin-top:40px;
-backdrop-filter:blur(15px);
-}
-
-/* SECTION */
 section{
 padding:100px 60px;
 }
 
-h2{
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(15px);
 margin-bottom:30px;
-color:#fff;
 }
 
-/* PROJECTS */
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -124,17 +119,17 @@ gap:20px;
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:15px;
-transition:0.3s;
+transition:.3s;
 }
-
 .project:hover{
 transform:translateY(-8px);
+box-shadow:0 0 20px #00f0ff55;
 }
 
 footer{
 text-align:center;
-padding:40px;
-opacity:0.6;
+padding:30px;
+opacity:0.5;
 }
 </style>
 </head>
@@ -153,14 +148,10 @@ opacity:0.6;
 <section class="hero">
 
 <div class="left">
-<p>Hello, I'm</p>
+<p>Hello I'm</p>
 <h1>Marzieh <span>Abbasi</span></h1>
-<p>Computer Engineering Student passionate about building real-world projects.</p>
-
-<div class="buttons">
-<a class="btn primary" href="#">Download CV</a>
-<a class="btn secondary" href="#">Contact</a>
-</div>
+<p>Building modern futuristic interfaces & real-world projects.</p>
+<a href="#" class="btn">View Projects</a>
 </div>
 
 <div class="profile">
@@ -173,30 +164,30 @@ opacity:0.6;
 <div class="card">
 <h2>About Me</h2>
 <p>
-I am a computer engineering student with strong interest in programming,
-problem solving and building modern web applications.
+Computer engineering student passionate about UI design, coding and building creative solutions.
 </p>
 </div>
 </section>
 
 <section id="projects">
+
 <h2>Projects</h2>
 
 <div class="projects">
 
 <div class="project">
 <h3>Python Calculator</h3>
-<p>Basic calculator built with Python.</p>
+<p>Logic-based calculator using Python.</p>
 </div>
 
 <div class="project">
 <h3>Portfolio Website</h3>
-<p>Modern personal website using HTML & CSS.</p>
+<p>Modern HTML/CSS personal website.</p>
 </div>
 
 <div class="project">
-<h3>Todo App</h3>
-<p>Simple task manager concept project.</p>
+<h3>UI Design Concept</h3>
+<p>Futuristic interface inspired by modern trends.</p>
 </div>
 
 </div>
