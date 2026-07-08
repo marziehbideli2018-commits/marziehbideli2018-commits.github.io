@@ -6,6 +6,7 @@
 <title>Marzieh Abbasi</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 
@@ -19,23 +20,24 @@ font-family:'Inter',sans-serif;
 body{
 background:#020617;
 color:#fff;
-overflow-x:hidden;
 }
 
-/* ===== BACKGROUND GLOW ===== */
+/* ===== BACKGROUND ===== */
 body::before{
 content:'';
 position:fixed;
 width:600px;height:600px;
-background:radial-gradient(circle,#7c3aed55,transparent);
-top:-200px;left:-200px;
+background:radial-gradient(circle,#8b5cf644,transparent);
+top:-150px;left:-150px;
+filter:blur(80px);
 }
 body::after{
 content:'';
 position:fixed;
 width:500px;height:500px;
-background:radial-gradient(circle,#22c55e55,transparent);
-bottom:-200px;right:-200px;
+background:radial-gradient(circle,#22c55e33,transparent);
+bottom:-150px;right:-150px;
+filter:blur(80px);
 }
 
 /* ===== NAV ===== */
@@ -45,7 +47,7 @@ justify-content:space-between;
 padding:25px 80px;
 position:fixed;
 width:100%;
-background:rgba(2,6,23,0.6);
+background:rgba(2,6,23,0.5);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -64,8 +66,7 @@ color:#a855f7;
 .hero{
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:140px 80px 60px;
+padding:140px 80px 40px;
 }
 
 /* LEFT */
@@ -74,11 +75,11 @@ width:50%;
 }
 
 .profile{
-width:160px;
-height:160px;
+width:180px;
+height:180px;
 border-radius:50%;
 overflow:hidden;
-box-shadow:0 0 30px #a855f7;
+box-shadow:0 0 35px #a855f7;
 margin-bottom:20px;
 }
 
@@ -87,15 +88,15 @@ width:100%;
 height:100%;
 object-fit:cover;
 
-/* بلور ملایم */
-filter: blur(3px) brightness(0.9);
+/* بلور خیلی کم */
+filter: blur(0.8px) brightness(0.95);
 
-/* پایین محوتر */
-mask-image: linear-gradient(to bottom, black 70%, transparent);
+/* فقط پایین محو */
+mask-image: linear-gradient(to bottom, black 80%, transparent);
 }
 
 .left h1{
-font-size:3rem;
+font-size:3.2rem;
 font-weight:800;
 }
 
@@ -123,10 +124,11 @@ padding:12px 18px;
 border-radius:10px;
 text-decoration:none;
 margin-right:10px;
+display:inline-block;
 }
 
 .primary{
-background:#7c3aed;
+background:linear-gradient(45deg,#7c3aed,#a855f7);
 color:#fff;
 }
 
@@ -135,21 +137,44 @@ border:1px solid #555;
 color:#ccc;
 }
 
-/* ===== RIGHT CARD ===== */
+/* SOCIAL */
+.social{
+margin-top:20px;
+}
+
+.social i{
+margin-right:15px;
+color:#aaa;
+cursor:pointer;
+}
+
+.social i:hover{
+color:#a855f7;
+}
+
+/* RIGHT CARD */
 .right{
 width:45%;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.04);
 padding:30px;
 border-radius:20px;
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 40px rgba(168,85,247,0.15);
 }
 
 .card h2{
 margin-bottom:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.card h2 i{
+color:#a855f7;
 }
 
 .card p{
@@ -157,6 +182,7 @@ opacity:0.8;
 margin-bottom:20px;
 }
 
+/* INFO GRID */
 .info-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -164,55 +190,69 @@ gap:15px;
 }
 
 .info-item{
-background:rgba(255,255,255,0.03);
-padding:10px;
-border-radius:10px;
+display:flex;
+align-items:center;
+gap:10px;
 font-size:0.9rem;
 }
 
-/* ===== STATS ===== */
+.info-item i{
+color:#a855f7;
+}
+
+/* STATS */
 .stats{
 margin:40px 80px;
 display:flex;
 justify-content:space-around;
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.04);
 padding:25px;
 border-radius:20px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.08);
 }
 
 .stat{
 text-align:center;
 }
 
-.stat h3{
+.stat i{
 color:#a855f7;
+margin-bottom:8px;
 }
 
-/* ===== PROJECTS ===== */
+.stat h3{
+margin-top:5px;
+}
+
+/* PROJECTS */
 .projects{
 padding:40px 80px;
 }
 
-.projects h2{
-margin-bottom:20px;
-}
-
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
 .project{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.04);
 padding:20px;
 border-radius:15px;
+border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
 }
 
 .project:hover{
 transform:translateY(-6px);
+box-shadow:0 0 20px rgba(168,85,247,0.2);
+}
+
+.project i{
+font-size:28px;
+color:#a855f7;
+margin-bottom:10px;
 }
 
 .tags span{
@@ -223,7 +263,7 @@ font-size:0.75rem;
 margin-right:5px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
 text-align:center;
 padding:40px;
@@ -269,24 +309,35 @@ I love turning ideas into real projects.
 <a href="#" class="btn secondary">Contact Me</a>
 </div>
 
+<div class="social">
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fas fa-envelope"></i>
+<i class="fab fa-instagram"></i>
+</div>
+
 </div>
 
 <div class="right">
 <div class="card">
 
-<h2>About me</h2>
+<h2><i class="fa-regular fa-user"></i> About me</h2>
 
 <p>
-I am a computer engineering student with a strong interest in web development and algorithms.
+I am a computer engineering student with a strong interest in web development and creating efficient solutions.
 </p>
 
 <div class="info-grid">
-<div class="info-item">🎂 Birth: 1990</div>
-<div class="info-item">📧 Email: marziehbideli2018@gmail.com</div>
-<div class="info-item">📍 Ahvaz, Iran</div>
-<div class="info-item">📞 +98 9168047913</div>
-<div class="info-item">🎓 Computer Engineering</div>
-<div class="info-item">🌐 English (B2)</div>
+
+<div class="info-item"><i class="fa-regular fa-calendar"></i> 2003</div>
+<div class="info-item"><i class="fa-regular fa-envelope"></i> email@example.com</div>
+
+<div class="info-item"><i class="fa-solid fa-location-dot"></i> Tehran, Iran</div>
+<div class="info-item"><i class="fa-solid fa-phone"></i> +98 912 000 0000</div>
+
+<div class="info-item"><i class="fa-solid fa-graduation-cap"></i> Computer Engineering</div>
+<div class="info-item"><i class="fa-solid fa-globe"></i> English (B2)</div>
+
 </div>
 
 </div>
@@ -297,21 +348,25 @@ I am a computer engineering student with a strong interest in web development an
 <div class="stats">
 
 <div class="stat">
+<i class="fa-solid fa-code"></i>
 <h3>5+</h3>
 <p>Projects</p>
 </div>
 
 <div class="stat">
+<i class="fa-solid fa-laptop-code"></i>
 <h3>2+</h3>
 <p>Years</p>
 </div>
 
 <div class="stat">
+<i class="fa-solid fa-trophy"></i>
 <h3>3</h3>
 <p>Certificates</p>
 </div>
 
 <div class="stat">
+<i class="fa-solid fa-mug-hot"></i>
 <h3>100+</h3>
 <p>Hours</p>
 </div>
@@ -325,6 +380,7 @@ I am a computer engineering student with a strong interest in web development an
 <div class="grid">
 
 <div class="project">
+<i class="fa-solid fa-calculator"></i>
 <h3>Python Calculator</h3>
 <p>Simple calculator built with Python</p>
 <div class="tags">
@@ -334,8 +390,9 @@ I am a computer engineering student with a strong interest in web development an
 </div>
 
 <div class="project">
+<i class="fa-solid fa-globe"></i>
 <h3>Portfolio Website</h3>
-<p>Built with HTML & CSS</p>
+<p>Built with HTML, CSS</p>
 <div class="tags">
 <span>HTML</span>
 <span>CSS</span>
@@ -343,6 +400,7 @@ I am a computer engineering student with a strong interest in web development an
 </div>
 
 <div class="project">
+<i class="fa-solid fa-list-check"></i>
 <h3>Todo App</h3>
 <p>Task management project</p>
 <div class="tags">
