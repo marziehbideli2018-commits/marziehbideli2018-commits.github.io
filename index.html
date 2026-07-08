@@ -119,8 +119,8 @@ nav a.active::after {
 }
 .stat i {
     font-size:34px; 
-    color: #c026d3; 
-    filter: drop-shadow(0 0 12px #c026d3) drop-shadow(0 0 20px #a855f7);
+    color: #a855f7; 
+    filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 22px #c026d3);
 }
 .stats::before, .stats::after {
     content:''; position:absolute; top:22%; bottom:22%; width:1px; background:rgba(168,85,247,0.4);
@@ -158,23 +158,32 @@ nav a.active::after {
     font-weight:500;
 }
 
-/* Arrow indicator */
+/* Arrow indicator - مربع با فلش کج */
 .project::after {
-    content: '\f105'; /* fa-angle-right */
+    content: '\f061'; /* fa-arrow-right */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 22px;
+    bottom: 22px;
+    right: 22px;
+    font-size: 18px;
     color: #a855f7;
-    opacity: 0.6;
-    transition: all 0.3s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a855f7;
+    border-radius: 6px;
+    opacity: 0.75;
+    transition: all 0.3s ease;
 }
 .project:hover::after {
     opacity: 1;
-    transform: translateX(4px);
+    transform: rotate(25deg) translateX(3px);
     color: #c026d3;
+    border-color: #c026d3;
+    box-shadow: 0 0 12px rgba(192, 38, 211, 0.5);
 }
 
 footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
