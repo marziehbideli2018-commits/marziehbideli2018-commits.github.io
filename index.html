@@ -3,102 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marzieh Abbasi | Futuristic Portfolio</title>
+<title>Marzieh Abbasi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
 body{
 background:#020617;
-color:#e5e7eb;
+color:#fff;
 overflow-x:hidden;
 }
 
+/* ===== BACKGROUND GLOW ===== */
 body::before{
 content:'';
 position:fixed;
 width:600px;height:600px;
-background:radial-gradient(circle,#00f0ff33,transparent);
+background:radial-gradient(circle,#7c3aed55,transparent);
 top:-200px;left:-200px;
 }
 body::after{
 content:'';
 position:fixed;
 width:500px;height:500px;
-background:radial-gradient(circle,#ff00aa33,transparent);
+background:radial-gradient(circle,#22c55e55,transparent);
 bottom:-200px;right:-200px;
 }
 
+/* ===== NAV ===== */
 nav{
 display:flex;
 justify-content:space-between;
-padding:20px 60px;
+padding:25px 80px;
 position:fixed;
 width:100%;
-background:rgba(2,6,23,0.7);
+background:rgba(2,6,23,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 nav a{
-color:#cbd5f5;
-margin-left:20px;
+color:#aaa;
+margin-left:25px;
 text-decoration:none;
 }
 
+nav a:hover{
+color:#a855f7;
+}
+
+/* ===== HERO ===== */
 .hero{
 display:flex;
 justify-content:space-between;
 align-items:center;
-height:100vh;
-padding:0 60px;
+padding:140px 80px 60px;
 }
 
-.left h1{
-font-size:3.5rem;
-font-weight:800;
-}
-
-.left span{
-color:#00f0ff;
-text-shadow:0 0 15px #00f0ff;
-}
-
-.left p{
-margin-top:15px;
-opacity:0.8;
-}
-
-.btn{
-margin-top:20px;
-padding:12px 20px;
-border-radius:10px;
-border:1px solid #00f0ff;
-color:#00f0ff;
-text-decoration:none;
-display:inline-block;
+/* LEFT */
+.left{
+width:50%;
 }
 
 .profile{
-width:260px;
-height:260px;
+width:160px;
+height:160px;
 border-radius:50%;
 overflow:hidden;
-border:2px solid #00f0ff;
-box-shadow:0 0 30px #00f0ff;
+box-shadow:0 0 30px #a855f7;
+margin-bottom:20px;
 }
 
 .profile img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:blur(3px) brightness(0.85);
+
+/* بلور ملایم */
+filter: blur(2px) brightness(0.9);
+
+/* پایین محوتر */
+mask-image: linear-gradient(to bottom, black 70%, transparent);
 }
 
-section{
-padding:100px 60px;
+.left h1{
+font-size:3rem;
+font-weight:800;
+}
+
+.left span{
+color:#a855f7;
+}
+
+.subtitle{
+color:#aaa;
+margin-top:8px;
+}
+
+.desc{
+margin-top:15px;
+opacity:0.8;
+max-width:450px;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+.btn{
+padding:12px 18px;
+border-radius:10px;
+text-decoration:none;
+margin-right:10px;
+}
+
+.primary{
+background:#7c3aed;
+color:#fff;
+}
+
+.secondary{
+border:1px solid #555;
+color:#ccc;
+}
+
+/* ===== RIGHT CARD ===== */
+.right{
+width:45%;
 }
 
 .card{
@@ -106,10 +145,60 @@ background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:20px;
 backdrop-filter:blur(15px);
-margin-bottom:30px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
+.card h2{
+margin-bottom:15px;
+}
+
+.card p{
+opacity:0.8;
+margin-bottom:20px;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.info-item{
+background:rgba(255,255,255,0.03);
+padding:10px;
+border-radius:10px;
+font-size:0.9rem;
+}
+
+/* ===== STATS ===== */
+.stats{
+margin:40px 80px;
+display:flex;
+justify-content:space-around;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
+color:#a855f7;
+}
+
+/* ===== PROJECTS ===== */
 .projects{
+padding:40px 80px;
+}
+
+.projects h2{
+margin-bottom:20px;
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
@@ -119,18 +208,28 @@ gap:20px;
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:15px;
-transition:.3s;
-}
-.project:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px #00f0ff55;
+transition:0.3s;
 }
 
+.project:hover{
+transform:translateY(-6px);
+}
+
+.tags span{
+background:#7c3aed;
+padding:5px 10px;
+border-radius:8px;
+font-size:0.75rem;
+margin-right:5px;
+}
+
+/* ===== FOOTER ===== */
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 opacity:0.5;
 }
+
 </style>
 </head>
 
@@ -140,54 +239,115 @@ opacity:0.5;
 <div><b>MA.</b></div>
 <div>
 <a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
+<a href="#">About</a>
+<a href="#">Skills</a>
+<a href="#">Projects</a>
+<a href="#">Contact</a>
 </div>
 </nav>
 
 <section class="hero">
 
 <div class="left">
-<p>Hello I'm</p>
-<h1>Marzieh <span>Abbasi</span></h1>
-<p>Building modern futuristic interfaces & real-world projects.</p>
-<a href="#" class="btn">View Projects</a>
-</div>
 
 <div class="profile">
 <img src="profile.jpg">
 </div>
 
-</section>
+<p>Hello, I'm</p>
+<h1>Marzieh <span>Abbasi</span></h1>
 
-<section id="about">
-<div class="card">
-<h2>About Me</h2>
-<p>
-Computer engineering student passionate about UI design, coding and building creative solutions.
+<p class="subtitle">Computer Engineering Student</p>
+
+<p class="desc">
+I'm passionate about software development and problem solving.
+I love turning ideas into real projects.
 </p>
+
+<div class="buttons">
+<a href="#" class="btn primary">Download CV</a>
+<a href="#" class="btn secondary">Contact Me</a>
 </div>
+
+</div>
+
+<div class="right">
+<div class="card">
+
+<h2>About me</h2>
+
+<p>
+I am a computer engineering student with a strong interest in web development and algorithms.
+</p>
+
+<div class="info-grid">
+<div class="info-item">🎂 Birth: 2003</div>
+<div class="info-item">📧 Email: example@email.com</div>
+<div class="info-item">📍 Tehran, Iran</div>
+<div class="info-item">📞 +98 912 000 0000</div>
+<div class="info-item">🎓 Computer Engineering</div>
+<div class="info-item">🌐 English (B2)</div>
+</div>
+
+</div>
+</div>
+
 </section>
 
-<section id="projects">
+<div class="stats">
+
+<div class="stat">
+<h3>5+</h3>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h3>2+</h3>
+<p>Years</p>
+</div>
+
+<div class="stat">
+<h3>3</h3>
+<p>Certificates</p>
+</div>
+
+<div class="stat">
+<h3>100+</h3>
+<p>Hours</p>
+</div>
+
+</div>
+
+<section class="projects">
 
 <h2>Projects</h2>
 
-<div class="projects">
+<div class="grid">
 
 <div class="project">
 <h3>Python Calculator</h3>
-<p>Logic-based calculator using Python.</p>
+<p>Simple calculator built with Python</p>
+<div class="tags">
+<span>Python</span>
+<span>CLI</span>
+</div>
 </div>
 
 <div class="project">
 <h3>Portfolio Website</h3>
-<p>Modern HTML/CSS personal website.</p>
+<p>Built with HTML & CSS</p>
+<div class="tags">
+<span>HTML</span>
+<span>CSS</span>
+</div>
 </div>
 
 <div class="project">
-<h3>UI Design Concept</h3>
-<p>Futuristic interface inspired by modern trends.</p>
+<h3>Todo App</h3>
+<p>Task management project</p>
+<div class="tags">
+<span>JS</span>
+</div>
 </div>
 
 </div>
