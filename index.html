@@ -132,8 +132,20 @@ nav a.active::after {
 .info-header strong { color:#a855f7; font-size:1rem; }
 
 /* STATS / SKILLS */
+#skills {
+    margin: 80px 80px 60px; /* فاصله بیشتر از بالا برای اسکرول بهتر */
+    scroll-margin-top: 120px;
+}
+
+/* PROJECTS */
+.projects { 
+    padding:60px 80px 120px; 
+    scroll-margin-top: 100px;
+}
+
 .stats {
-    margin:40px 80px; display:flex; justify-content:space-between; align-items:center;
+    margin:0; /* چون id روی div جداگانه است */
+    display:flex; justify-content:space-between; align-items:center;
     background:rgba(255,255,255,0.05); padding:28px 40px; border-radius:22px;
     backdrop-filter:blur(25px); border:1px solid rgba(168,85,247,0.3); position:relative;
 }
@@ -160,8 +172,6 @@ nav a.active::after {
     background:rgba(168,85,247,0.5); left: 73%; 
 }
 
-/* PROJECTS */
-.projects { padding:60px 80px 120px; }
 .projects-header { 
     display:flex; align-items:center; justify-content:space-between; margin-bottom:40px; 
 }
@@ -373,7 +383,7 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
     </div>
 </section>
 
-<!-- Skills / Stats -->
+<!-- Skills Section -->
 <div id="skills" class="stats">
     <div class="stat">
         <i class="fa-solid fa-code"></i>
