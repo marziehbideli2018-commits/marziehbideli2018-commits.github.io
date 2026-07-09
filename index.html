@@ -177,12 +177,13 @@ nav a.active::after {
 
 .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:28px; }
 .project {
-    background:rgba(255,255,255,0.05); padding:32px 28px; border-radius:20px;
+    background:rgba(255,255,255,0.05); padding:28px; border-radius:20px;
     border:1px solid rgba(168,85,247,0.25); transition:0.4s;
     position: relative;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 22px;
 }
 .project:hover { transform:translateY(-10px); box-shadow:0 0 45px rgba(168,85,247,0.4); }
 
@@ -190,9 +191,15 @@ nav a.active::after {
     font-size: 52px; 
     color:#a855f7; 
     filter: drop-shadow(0 0 15px #a855f7);
-    margin-bottom: 20px;
     flex-shrink: 0;
-    align-self: flex-start;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-content {
+    flex: 1;
 }
 
 .project-content h3 {
@@ -203,7 +210,7 @@ nav a.active::after {
 .project-content p {
     color: #ccc;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .tags { display:flex; flex-wrap:wrap; gap:8px; }
