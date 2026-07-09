@@ -24,13 +24,6 @@ body::before {
                 radial-gradient(circle at 75% 75%, rgba(168,85,247,0.20) 0%, transparent 65%);
     z-index:-2; filter:blur(90px);
 }
-body::after {
-    content:''; position:fixed; inset:0;
-    background-image: radial-gradient(white 1px, transparent 2px),
-                      radial-gradient(white 1px, transparent 2px);
-    background-size: 160px 160px, 100px 100px;
-    opacity:0.12; z-index:-1;
-}
 
 /* NAV */
 nav {
@@ -53,8 +46,8 @@ nav a.active::after {
 
 .profile {
     width:230px; height:230px; border-radius:50%; overflow:hidden; margin-bottom:32px;
-    box-shadow:0 0 40px #a855f7, 0 0 90px #a855f7, 0 0 160px rgba(168,85,247,0.6);
-    border:5px solid rgba(168,85,247,0.6);
+    box-shadow:0 0 50px #a855f7, 0 0 100px rgba(168,85,247,0.6);
+    border:6px solid rgba(168,85,247,0.7);
     display: block;
 }
 
@@ -70,46 +63,41 @@ nav a.active::after {
 .primary { background:linear-gradient(45deg,#7c3aed,#a855f7); color:white; box-shadow:0 0 25px rgba(168,85,247,0.7); }
 .secondary { border:2px solid #666; color:#ddd; }
 
-/* SOCIAL */
-.social { margin-top:30px; display:flex; gap:24px; }
-.social i { font-size:24px; color:#bbb; transition:0.3s; }
-.social i:hover { color:#a855f7; transform:scale(1.25); }
-
-/* ABOUT CARD */
+/* ABOUT CARD - Glass + Neon Gradient like image */
 .card {
-    background:rgba(255,255,255,0.07);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.9));
     padding:40px; 
     border-radius:26px;
-    backdrop-filter:blur(32px); 
-    border:1px solid rgba(168,85,247,0.35);
+    backdrop-filter:blur(30px); 
+    border:1px solid rgba(103, 232, 249, 0.4);
     position:relative; 
     overflow:hidden; 
-    box-shadow:0 0 60px rgba(168,85,247,0.3);
+    box-shadow:0 0 80px rgba(103, 232, 249, 0.3);
     min-height: 560px;
 }
 .card::before {
-    content:''; position:absolute; top:-100px; right:-90px; width:260px; height:260px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.45) 15%, transparent 70%);
-    filter: blur(75px); z-index:-1;
+    content:''; position:absolute; top:-80px; right:-80px; width:280px; height:280px;
+    background: radial-gradient(circle, rgba(134, 239, 172, 0.4) 10%, transparent 60%);
+    filter: blur(70px); z-index:-1;
 }
 .card::after {
-    content:''; position:absolute; bottom:-110px; left:-70px; width:280px; height:280px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.45) 15%, transparent 70%);
-    filter: blur(80px); z-index:-1;
+    content:''; position:absolute; bottom:-100px; left:-60px; width:300px; height:300px;
+    background: radial-gradient(circle, rgba(103, 232, 249, 0.35) 10%, transparent 65%);
+    filter: blur(75px); z-index:-1;
 }
 
 .card h2 { 
     display:flex; align-items:center; gap:12px; margin-bottom:26px; font-size:1.5rem; 
 }
-.card h2 i { color:#a855f7; font-size:26px; }
+.card h2 i { color:#67e8f9; font-size:26px; }
 
 /* STATS */
 #skills.stats {
     margin:80px 80px 60px;
-    background:rgba(255,255,255,0.07);
-    border:1px solid rgba(168,85,247,0.35);
-    backdrop-filter:blur(32px);
-    box-shadow:0 0 50px rgba(168,85,247,0.25);
+    background: linear-gradient(90deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9));
+    border:1px solid rgba(134, 239, 172, 0.4);
+    backdrop-filter:blur(30px);
+    box-shadow:0 0 60px rgba(134, 239, 172, 0.25);
     display:flex; justify-content:space-between; align-items:center;
     padding:28px 40px; border-radius:22px;
 }
@@ -118,22 +106,8 @@ nav a.active::after {
 }
 .stat i {
     font-size:34px; 
-    color: #a855f7; 
-    filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 22px #c026d3);
-}
-
-/* خطوط جداکننده */
-.stats::before { 
-    content:''; position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 24.5%; 
-}
-.stats::after { 
-    content:''; position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 49.5%; 
-}
-.stats .divider-last { 
-    position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 73%; 
+    color: #67e8f9; 
+    filter: drop-shadow(0 0 15px #67e8f9);
 }
 
 /* PROJECTS */
@@ -144,10 +118,10 @@ nav a.active::after {
 .projects-header .title {
     display:flex; align-items:center; gap:12px; font-size:1.8rem; 
 }
-.projects-header .title i { color:#a855f7; font-size:28px; filter:drop-shadow(0 0 10px #a855f7); }
+.projects-header .title i { color:#67e8f9; font-size:28px; filter:drop-shadow(0 0 10px #67e8f9); }
 
 .view-all {
-    color: #a855f7;
+    color: #67e8f9;
     text-decoration: none;
     font-weight: 600;
     display: flex;
@@ -155,12 +129,12 @@ nav a.active::after {
     gap: 8px;
     transition: 0.3s;
 }
-.view-all:hover { gap: 12px; color: #c026d3; }
+.view-all:hover { gap: 12px; color: #a855f7; }
 
 .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr)); gap:28px; }
 .project {
-    background:rgba(255,255,255,0.07);
-    border:1px solid rgba(168,85,247,0.35);
+    background: linear-gradient(145deg, rgba(30,41,59,0.85), rgba(15,23,42,0.9));
+    border:1px solid rgba(134, 239, 172, 0.4);
     backdrop-filter:blur(25px);
     padding:28px; 
     border-radius:20px;
@@ -173,13 +147,13 @@ nav a.active::after {
 }
 .project:hover { 
     transform:translateY(-10px); 
-    box-shadow:0 0 45px rgba(168,85,247,0.4);
+    box-shadow:0 0 50px rgba(134, 239, 172, 0.45);
 }
 
 .project-icon {
     font-size: 52px; 
-    color:#a855f7; 
-    filter: drop-shadow(0 0 15px #a855f7);
+    color:#67e8f9; 
+    filter: drop-shadow(0 0 18px #67e8f9);
     flex-shrink: 0;
     width: 60px;
 }
@@ -190,12 +164,13 @@ nav a.active::after {
 
 .tags { display:flex; flex-wrap:wrap; gap:8px; }
 .tags span {
-    background:#6d28d9;
-    color:white;
+    background:rgba(103, 232, 249, 0.15);
+    color:#67e8f9;
     padding:6px 14px;
     border-radius:8px;
     font-size:12.5px;
     font-weight:500;
+    border:1px solid rgba(103, 232, 249, 0.3);
 }
 
 /* Arrow */
@@ -207,21 +182,21 @@ nav a.active::after {
     bottom: 22px;
     right: 22px;
     font-size: 18px;
-    color: #a855f7;
+    color: #67e8f9;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #a855f7;
+    border: 2px solid #67e8f9;
     border-radius: 6px;
     opacity: 0.8;
 }
 .project:hover::after {
     opacity: 1;
     transform: rotate(25deg) translateX(4px);
-    color: #c026d3;
-    border-color: #c026d3;
+    color: #a855f7;
+    border-color: #a855f7;
 }
 
 footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
