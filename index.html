@@ -14,6 +14,7 @@
 
 body {
     background:#020617; color:#fff; overflow-x:hidden; position:relative;
+    scroll-behavior: smooth; /* اسکرول نرم */
 }
 
 /* Background */
@@ -82,14 +83,12 @@ nav a.active::after {
     min-height: 560px;
 }
 
-/* هاله صورتی قوی‌تر بالا راست */
+/* هاله‌ها */
 .card::before {
     content:''; position:absolute; top:-100px; right:-90px; width:260px; height:260px;
     background: radial-gradient(circle, rgba(236, 72, 153, 0.55) 15%, transparent 65%);
     filter: blur(75px); z-index:-1;
 }
-
-/* هاله بنفش-صورتی قوی‌تر پایین چپ */
 .card::after {
     content:''; position:absolute; bottom:-110px; left:-70px; width:280px; height:280px;
     background: radial-gradient(circle, rgba(168, 85, 247, 0.50) 15%, transparent 70%);
@@ -134,33 +133,10 @@ nav a.active::after {
 .info-header i { color:#a855f7; font-size:21px; filter:drop-shadow(0 0 8px #a855f7); }
 .info-header strong { color:#a855f7; font-size:1rem; }
 
-/* STATS */
-.stats {
-    margin:40px 80px; display:flex; justify-content:space-between; align-items:center;
-    background:rgba(255,255,255,0.05); padding:28px 40px; border-radius:22px;
-    backdrop-filter:blur(25px); border:1px solid rgba(168,85,247,0.3); position:relative;
-}
-.stat {
-    display:flex; align-items:center; gap:18px; flex:1; position:relative;
-}
-.stat i {
-    font-size:34px; 
-    color: #a855f7; 
-    filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 22px #c026d3);
-}
-
-/* خطوط جداکننده */
-.stats::before { 
-    content:''; position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 24.5%; 
-}
-.stats::after { 
-    content:''; position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 49.5%; 
-}
-.stats .divider-last { 
-    position:absolute; top:25%; bottom:25%; width:1px; 
-    background:rgba(168,85,247,0.5); left: 73%; 
+/* STATS - بخش Skills */
+#skills {
+    margin: 40px 80px;
+    scroll-margin-top: 100px; /* برای اسکرول بهتر */
 }
 
 /* PROJECTS */
@@ -376,7 +352,8 @@ footer { text-align:center; padding:70px 20px 40px; opacity:0.6; }
     </div>
 </section>
 
-<div class="stats">
+<!-- بخش Skills (نوار آمار) -->
+<div id="skills" class="stats">
     <div class="stat">
         <i class="fa-solid fa-code"></i>
         <div><h3>5+</h3><p>Projects</p></div>
